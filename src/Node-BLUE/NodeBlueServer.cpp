@@ -28,6 +28,7 @@
  * files in the program, then also delete it here.
 */
 
+#include <sys/stat.h>
 #include "NodeBlueServer.h"
 #include "../GD/GD.h"
 #include <homegear-base/BaseLib.h>

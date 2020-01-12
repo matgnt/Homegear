@@ -33,6 +33,7 @@
 #include "RPCMethods.h"
 #include "../GD/GD.h"
 #include "Roles.h"
+#include <sys/stat.h>
 #ifdef BSDSYSTEM
 #include <sys/wait.h>
 #endif

@@ -31,6 +31,7 @@
 #include "DatabaseController.h"
 #include "../User/User.h"
 #include "../GD/GD.h"
+#include <sys/stat.h>
 
 namespace Homegear
 {
