@@ -47,7 +47,9 @@
 #include <sys/stat.h>
 #include <sys/file.h>
 #include <sys/prctl.h> //For function prctl
+#ifdef BSDSYSTEM
 #include <sys/sysctl.h> //For BSD systems
+#endif
 #include <malloc.h>
 
 #include <cmath>
@@ -547,7 +549,7 @@ void startUp()
 {
 	try
 	{
-        if(GD::bl->settings.memoryDebugging()) mallopt(M_CHECK_ACTION, 3); //Print detailed error message, stack trace, and memory, and abort the program. See: http://man7.org/linux/man-pages/man3/mallopt.3.html
+        //if(GD::bl->settings.memoryDebugging()) mallopt(M_CHECK_ACTION, 3); //Print detailed error message, stack trace, and memory, and abort the program. See: http://man7.org/linux/man-pages/man3/mallopt.3.html
 
         //Use sigaction over signal because of different behavior in Linux and BSD
         struct sigaction sa{};

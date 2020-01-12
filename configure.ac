@@ -60,6 +60,7 @@ case $host_os in
 	*BSD*)
 		CPPFLAGS="$CPPFLAGS -DBSDSYSTEM -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -D_WITH_DPRINTF"
 		AM_CONDITIONAL(BSDSYSTEM, true)
+		AC_DEFINE(BSDSYSTEM, [], [Defined when compiling on BSD])
 		;;
 	*)
 	AC_MSG_ERROR([Your platform is not currently supported])
