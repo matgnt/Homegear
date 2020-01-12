@@ -30,7 +30,9 @@
 
 #include "GD/GD.h"
 #include "CLI/CliClient.h"
+#ifndef NO_SCRIPTENGINE
 #include "ScriptEngine/ScriptEngineClient.h"
+#endif
 #include "Node-BLUE/NodeBlueClient.h"
 #include "UPnP/UPnP.h"
 #include "MQTT/Mqtt.h"

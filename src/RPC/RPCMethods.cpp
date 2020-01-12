@@ -28,6 +28,7 @@
  * files in the program, then also delete it here.
 */
 
+#include "../../config.h"
 #include <homegear-base/Managers/ProcessManager.h>
 #include "RPCMethods.h"
 #include "../GD/GD.h"
@@ -5220,12 +5221,13 @@ BaseLib::PVariable RPCLifetick::invoke(BaseLib::PRpcClientInfo clientInfo, BaseL
             GD::out.printCritical("Critical: Device families lifetick failed.");
             return std::make_shared<BaseLib::Variable>(false);
         }
-
+#ifndef NO_SCRIPTENGINE
         if(!GD::scriptEngineServer->lifetick())
         {
             GD::out.printCritical("Critical: Script engine server lifetick failed.");
             return std::make_shared<BaseLib::Variable>(false);
         }
+#endif
 
         if(!GD::nodeBlueServer->lifetick())
         {

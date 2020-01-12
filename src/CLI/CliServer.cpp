@@ -1241,6 +1241,7 @@ std::string CliServer::peerCommand(uint64_t peerId, std::string& command)
 	return "Error executing command. See log file for more details.\n";
 }
 
+#ifndef NO_SCRIPTENGINE
 void CliServer::scriptFinished(BaseLib::ScriptEngine::PScriptInfo& scriptInfo, int32_t exitCode)
 {
 	try
@@ -1255,7 +1256,9 @@ void CliServer::scriptFinished(BaseLib::ScriptEngine::PScriptInfo& scriptInfo, i
 		GD::out.printEx(__FILE__, __LINE__, __PRETTY_FUNCTION__, ex.what());
 	}
 }
+#endif
 
+#ifndef NO_SCRIPTENGINE
 void CliServer::scriptOutput(PScriptInfo& scriptInfo, std::string& output, bool error)
 {
 	try
@@ -1276,5 +1279,6 @@ void CliServer::scriptOutput(PScriptInfo& scriptInfo, std::string& output, bool 
 		GD::out.printEx(__FILE__, __LINE__, __PRETTY_FUNCTION__, ex.what());
 	}
 }
+#endif
 
 }

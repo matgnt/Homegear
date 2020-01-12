@@ -32,7 +32,9 @@
 #define GD_H_
 
 #include "../../config.h"
+#ifndef NO_SCRIPTENGINE
 #include "../ScriptEngine/ScriptEngineServer.h"
+#endif
 #include "../Node-BLUE/NodeBlueServer.h"
 #include "../IPC/IpcServer.h"
 #include "../Events/EventHandler.h"
