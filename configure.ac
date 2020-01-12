@@ -80,6 +80,7 @@ AC_DEFINE_UNQUOTED([GITBRANCHHOMEGEAR], [`./getGitBranchHomegear.sh`], [Define g
 AC_ARG_WITH([scriptengine], [AS_HELP_STRING([--without-scriptengine], [Compile without script engine (removes the requirement for PHP)])], [with_scriptengine=no], [])
 AS_IF([test "x$with_scriptengine" = "xno"], [
 	AM_CONDITIONAL(WITH_SCRIPTENGINE, false)
+	AC_DEFINE(NO_SCRIPTENGINE, [], [Disables compilation of the PHP script engine])
 	], [
 	AM_CONDITIONAL(WITH_SCRIPTENGINE, true)
 	AC_DEFINE(SCRIPTENGINE, [], [Enables compilation of the PHP script engine])
