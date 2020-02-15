@@ -40,7 +40,6 @@
 #include <homegear-base/Managers/ProcessManager.h>
 #include "../config.h"
 
-#include <execinfo.h>
 #include <signal.h>
 #include <wait.h>
 #include <sys/resource.h>
